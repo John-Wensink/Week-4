@@ -1,5 +1,3 @@
-Python 3.11.2 (tags/v3.11.2:878ead1, Feb  7 2023, 16:38:35) [MSC v.1934 64 bit (AMD64)] on win32
-Type "help", "copyright", "credits" or "license()" for more information.
  #        class ItemToPurchase:
  #          item_name=input()
  #          item_price=float(input())
@@ -17,10 +15,10 @@ Type "help", "copyright", "credits" or "license()" for more information.
  #          item2 = ItemToPurchase()
  #          print("TOTAL COST")
  #          item1.print_item_cost()
- #          item2.print_item_cost() 
+ #          item2.print_item_cost()
  #       This doesn't work at all__________________________________________
 
- #       I'm going to try to start over, copy pasting the correct answer 
+ #       I'm going to try to start over, copy pasting the correct answer
  # form the GPT,and removing items I don't understand to see how it breaks
  #       class ItemToPurchase:
  #         def __init__(self, item_name='none', item_price=0.0, item_quantity=0):
@@ -30,7 +28,7 @@ Type "help", "copyright", "credits" or "license()" for more information.
 
  #         def print_item_cost(self):
  #             total_cost = self.item_price * self.item_quantity
- #             print(f"{self.item_name} {self.item_quantity} @ 
+ #             print(f"{self.item_name} {self.item_quantity} @
  # ${self.item_price} = ${total_cost}")
  #       if __name__ == "__main__":
  #          Prompt user for details of Item 1
@@ -471,7 +469,7 @@ Type "help", "copyright", "credits" or "license()" for more information.
 
  # main()
 
-# Now I'm getting weird ValueError: could not convert string to float issues 
+# Now I'm getting weird ValueError: could not convert string to float issues
 #________________________________________________________________
 
 class ItemToPurchase:
@@ -485,39 +483,39 @@ def print_item_cost(item):
     print(f"{item.item_name} {item.item_quantity} @ ${item.item_price:.2f} = ${total_cost:.2f}")
 
 def print_total_cost(items):
-...     total_cost = sum(item.item_quantity * item.item_price for item in items)
-...     print("Total Cost:")
-...     print(f"Total: ${total_cost:.2f}")
-... 
-... def main():
-...     items = []
-...     for i in range(2):
-...         print(f"Item {i + 1}")
-...         item_name = input("Enter the item name: ")
-...         item_price = float(input("Enter the item price: "))
-...         item_quantity = int(input("Enter the item quantity: "))
-...         items.append(ItemToPurchase(item_name, item_price, item_quantity))
-... 
-...     print("\nTOTAL COST")
-...     for item in items:
-...         print_item_cost(item)
-... 
-...     print_total_cost(items)
-... 
-... main()
-... 
-... #This appears to be working now, and is sufficient for Week 4 Milestone
-... 
-... #A wishlist of things I would like to add for the Week 8 Final:
-... 
-... #I would like to see some error handling in the final project
-... 
-... #Perhaps work on multiple classes, having a shopping_cart class might make it possible to add/remove items before checkout
-... 
-... #A running total would be interesting and not too hard to implement
-... 
-... #Maybe overly ambitious, but ability to sync to an SQL database could be useful for real world applications
-... 
-... #More deatal on the receipt to look more like a real receipt, maybe discount codes or promotions could be fun
-... 
-... #Input validation would be necessary for security in the real world
+    total_cost = sum(item.item_quantity * item.item_price for item in items)
+    print("Total Cost:")
+    print(f"Total: ${total_cost:.2f}")
+
+def main():
+    items = []
+    for i in range(2):
+        print(f"Item {i + 1}")
+        item_name = input("Enter the item name: ")
+        item_price = float(input("Enter the item price: "))
+        item_quantity = int(input("Enter the item quantity: "))
+        items.append(ItemToPurchase(item_name, item_price, item_quantity))
+
+    print("\nTOTAL COST")
+    for item in items:
+        print_item_cost(item)
+
+    print_total_cost(items)
+
+main()
+
+#This appears to be working now, and is sufficient for Week 4 Milestone
+
+#A wishlist of things I would like to add for the Week 8 Final:
+
+#I would like to see some error handling in the final project
+
+#Perhaps work on multiple classes, having a shopping_cart class might make it possible to add/remove items before checkout
+
+#A running total would be interesting and not too hard to implement
+
+#Maybe overly ambitious, but ability to sync to an SQL database could be useful for real world applications
+
+#More deatal on the receipt to look more like a real receipt, maybe discount codes or promotions could be fun
+
+#Input validation would be necessary for security in the real world
